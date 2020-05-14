@@ -3,7 +3,9 @@ const Specialty = require('../models/specialty');
 module.exports = {
 
     index: async (req, res, next) => {
+
         const specialties = await Specialty.find();
+        
         try {
             res.json(specialties);
         } catch (err) {
@@ -12,8 +14,10 @@ module.exports = {
     },
 
     newSpecialty: async (req, res, next) => {
+
         const newSpecialty = new Specialty(req.body)
         const specialty = await newSpecialty.save();
+
         try {
             res.status(201).json(specialty);
         } catch (err) {
