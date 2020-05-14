@@ -25,3 +25,7 @@ MongoDB connection string: mongodb://<dbuser>:<dbpassword>@ds139954.mlab.com:399
 ## route.rest (Bases on REST Client Plugins on VS Code)
 
 It contains the routes of different models that you can try on VS directly
+
+## Run test
+
+`npm run test`

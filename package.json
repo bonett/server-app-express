@@ -4,14 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "test": "nodemon --exec 'mocha'"
   },
   "keywords": [],
   "author": "wilfrido bonett",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.9.13"
+    "mocha": "^7.1.2",
+    "mongoose": "^5.9.13",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
