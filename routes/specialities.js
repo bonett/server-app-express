@@ -20,7 +20,9 @@ router.get('/:id', getSpeciality, (req, res) => {
 // Creating one
 router.post('/', async (req, res) => {
     const speciality = new Speciality({
-        name: req.body.name
+        name: req.body.name,
+        updatedBy: req.body.updatedBy,
+        createdBy: req.body.createdBy
     })
 
     try {
@@ -35,6 +37,8 @@ router.post('/', async (req, res) => {
 router.patch('/:id', getSpeciality, async (req, res) => {
     if (req.body.name != null) {
         res.speciality.name = req.body.name;
+        res.speciality.updatedBy = req.body.updatedBy;
+        res.speciality.createdBy = req.body.createdBy;
     }
 
     try {

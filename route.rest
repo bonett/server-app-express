@@ -1,27 +1,29 @@
+###
 GET http://localhost:3000/specialities
 
 
 ###
-
 GET http://localhost:3000/specialities/5ebc9f8bead90c2e47ba76d5
 
 
 ###
-
 POST http://localhost:3000/specialities
 Content-Type: application/json
 
 {
-    "name": "Happy"
+    "name": "Adolescent Medicine",
+    "createdBy": 79027,
+    "updatedBy": 49305
 }
 
 ###
-
-PATCH http://localhost:3000/specialities/5ebc9f8bead90c2e47ba76d5
+PATCH http://localhost:3000/specialities/5ebc9ff86ea8d12e93b73248
 Content-Type: application/json
 
 {
-    "name": "New Name"
+    "name": "Medicine 1",
+    "createdBy": 79027,
+    "updatedBy": 49305
 }
 
 
@@ -29,10 +31,34 @@ Content-Type: application/json
 DELETE http://localhost:3000/specialities/5ebc9f81ead90c2e47ba76d4
 
 
-
 ###
 GET http://localhost:3000/providers
 
 ###
 GET http://localhost:3000/providers/59c19cba5754f2d72b65c687
+
+###
+POST http://localhost:3000/providers
+Content-Type: application/json
+
+{
+    "status": "APPROVED",
+    "firstName": "Donald",
+    "lastName": "Brakus",
+    "middleName": "H",
+    "email": "Walker.Krajcik@yahoo.com",
+    "projectedStartDate": "2017-04-23",
+    "employerId": 334,
+    "providerType": "NP",
+    "staffStatus": "COURTESY",
+    "assignedTo": null,
+    "createdBy": 47141,
+    "updatedBy": 88964,
+}
+
+
+###
+DELETE http://localhost:3000/providers/59c19cba5754f2d72b65c690
+
+
 

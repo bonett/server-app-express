@@ -11,12 +11,20 @@ const providerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    middleName: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true,
         unique: true
     },
     speciality: {
+        type: Schema.ObjectId,
+        ref: "Speciality"
+    },
+    employerId: {
         type: Schema.ObjectId,
         ref: "Speciality"
     },
@@ -33,11 +41,21 @@ const providerSchema = new mongoose.Schema({
         type: String,
         default: 'AWATING_CREDENTIALS'
     },
+    assignedTo: {
+        type: String
+    },
+    createdBy: {
+        type: Number
+    },
+    updatedBy: {
+        type: Number
+    },
     photo: {
-        path: String
+        type: String
     }
 }, {
     timestamps: true
-})
+});
+
 
 module.exports = mongoose.model('Provider', providerSchema)
