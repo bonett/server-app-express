@@ -2,14 +2,14 @@
 GET http://localhost:3000/specialties
 
 ###
-GET http://localhost:3000/specialties/5ebcd5d9026b554690144c82
+GET http://localhost:3000/specialties/5ebcd91d2a220f48c6701526
 
 ###
 POST http://localhost:3000/specialties
 Content-Type: application/json
 
 {
-    "name": "Adolescent New",
+    "name": "xxxxxx Newasdsad",
     "createdBy": 79027,
     "updatedBy": 49305
 }
@@ -25,14 +25,14 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/specialties/5ebcd5d9026b554690144c82
+DELETE http://localhost:3000/specialties/5ebcda86b74d8a49e494a963
 
 
 ###
 GET http://localhost:3000/providers
 
 ###
-GET http://localhost:3000/providers/5ebcc541b08e9f3d59108fd9
+GET http://localhost:3000/providers/59c19cba5754f2d72b65c68f
 
 ###
 POST http://localhost:3000/providers
@@ -77,7 +77,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/providers/5ebcc541b08e9f3d59108fd9
+DELETE http://localhost:3000/providers/59c19cba5754f2d72b65c68f
 
 
 

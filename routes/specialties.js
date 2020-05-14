@@ -6,7 +6,7 @@ router.route('/')
     .get(SpecialtyController.index)
     .post(SpecialtyController.newSpecialty);
 
-router.route('/:id')
+router.route('/:specialtyId')
     .get(SpecialtyController.showSpecialty)
     .put(SpecialtyController.updateSpecialty)
     .delete(SpecialtyController.removeSpecialty);

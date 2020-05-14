@@ -8,7 +8,7 @@ router.route('/')
     .get(ProviderController.index)
     .post(ProviderController.newProvider);
 
-router.route('/:id')
+router.route('/:providerId')
     .get(ProviderController.showProvider)
     .put(ProviderController.updateProvider)
     .delete(ProviderController.removeProvider);
