@@ -24,7 +24,7 @@ module.exports = {
     showSpecialty: async (req, res, next) => {
 
         const { specialtyId } = req.params;
-        const specialty = await Specialty.findById(specialtyId)
+        const specialty = await Specialty.findOne(specialtyId)
 
         try {
             if (specialty == null) {
@@ -53,13 +53,13 @@ module.exports = {
     removeSpecialty: async (req, res, next) => {
 
         const { specialtyId } = req.params;
-        const specialty = await Specialty.findById(specialtyId);
+        const specialty = await Specialty.findOne(specialtyId);
 
         try {
             if (specialty == null) {
                 return res.status(404).json({ message: 'Cannot find specialty' });
             } else {
-                Specialty.remove();
+                await Specialty.findByIdAndRemove(specialty.id);
                 res.json({ message: "Deleted Specialty" });
             }
         } catch (err) {

@@ -25,7 +25,7 @@ module.exports = {
     showProvider: async (req, res, next) => {
 
         const { ProviderId } = req.params;
-        const provider = await Provider.findById(ProviderId)
+        const provider = await Provider.findOne(ProviderId)
 
         try {
             if (provider == null) {
@@ -54,13 +54,13 @@ module.exports = {
     removeProvider: async (req, res, next) => {
 
         const { providerId } = req.params;
-        const provider = await Specialty.findById(providerId);
+        const provider = await Provider.findOne(providerId);
 
         try {
             if (provider == null) {
                 return res.status(404).json({ message: 'Cannot find provider' });
             } else {
-                provider.remove();
+                await Provider.findByIdAndRemove(provider.id);
                 res.json({ message: "Deleted provider" });
             }
         } catch (err) {
