@@ -25,6 +25,17 @@ module.exports = {
         const status = await Status.findOne({ name: params.status });
         const staff = await Staff.findOne({ name: params.staffStatus });
         const getSpecialty = await Specialty.findById(specialtyId);
+        const projectedStart = new Date(params.projectedStartDate);
+        const currentDate = new Date();
+        let providerStatus = "";
+
+        if (projectedStart > currentDate) {
+            providerStatus = "DONE";
+        }
+
+        if (projectedStart <= currentDate) {
+            providerStatus = "PENDING";
+        }
 
         const newProvider = new Provider({
             firstName: req.body.firstName,
@@ -39,9 +50,9 @@ module.exports = {
             status: req.body.status,
             createdBy: req.body.createdBy,
             updatedBy: req.body.updatedBy,
-            photo: req.body.photo
+            photo: req.body.photo,
+            providerStatus: providerStatus
         });
-
 
         try {
             if (provider.name == null || staff.name == null || status.name == null) {
@@ -75,7 +86,8 @@ module.exports = {
             status: provider.status,
             createdBy: provider.createdBy,
             updatedBy: provider.updatedBy,
-            photo: provider.photo
+            photo: provider.photo,
+            providerStatus: provider.providerStatus
         });
 
         try {
