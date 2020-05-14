@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const SpecialtyController = require('../controllers/specialty')
+const SpecialtyController = require('../controllers/specialty');
 
 router.route('/')
     .get(SpecialtyController.index)

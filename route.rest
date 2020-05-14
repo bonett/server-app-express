@@ -32,7 +32,7 @@ DELETE http://localhost:3000/specialties/59c19c6e5754f2d72b65c663
 GET http://localhost:3000/providers
 
 ###
-GET http://localhost:3000/providers/5ebcc36d56808e3bcdceeaa9
+GET http://localhost:3000/providers/59c19cba5754f2d72b65c689
 
 ###
 POST http://localhost:3000/providers
@@ -57,7 +57,7 @@ Content-Type: application/json
 
 
 ###
-PATCH http://localhost:3000/providers/5ebcc36d56808e3bcdceeaa9
+PUT http://localhost:3000/providers/5ebcc36d56808e3bcdceeaa9
 Content-Type: application/json
 
 {
@@ -79,7 +79,7 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:3000/providers/59c19cba5754f2d72b65c690
+DELETE http://localhost:3000/providers/59c19cba5754f2d72b65c689
 
 
 

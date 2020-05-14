@@ -1,17 +1,18 @@
+const Provider = require('../models/provider');
 const Specialty = require('../models/specialty');
 
 module.exports = {
 
     index: async (req, res, next) => {
-        const specialties = await Specialty.find();
+        const Providers = await Provider.find();
         try {
-            res.json(specialties);
+            res.json(Providers);
         } catch (err) {
             res.status(500).json({ message: err.message });
         }
     },
 
-    newSpecialty: async (req, res, next) => {
+    newProvider: async (req, res, next) => {
         const newSpecialty = new Specialty(req.body)
         const specialty = await newSpecialty.save();
         try {
@@ -21,19 +22,19 @@ module.exports = {
         }
     },
 
-    showSpecialty: async (req, res, next) => {
+    showProvider: async (req, res, next) => {
 
-        const { specialtyId } = req.params;
-        const specialty = await Specialty.findOne(specialtyId)
+        const { ProviderId } = req.params;
+        const provider = await Provider.findOne(ProviderId)
 
         try {
-            res.json(specialty);
+            res.json(provider);
         } catch (err) {
             res.status(400).json({ message: err.message });
         }
     },
 
-    updateSpecialty: async (req, res, next) => {
+    updateProvider: async (req, res, next) => {
 
         const { specialtyId } = req.params;
         const newSpecialty = new Specialty(req.body);
@@ -46,17 +47,17 @@ module.exports = {
         }
     },
 
-    removeSpecialty: async (req, res, next) => {
+    removeProvider: async (req, res, next) => {
 
-        const { specialtyId } = req.params;
-        const specialty = await Specialty.findById(specialtyId);
+        const { providerId } = req.params;
+        const provider = await Specialty.findById(providerId);
 
         try {
-            if (specialty == null) {
-                return res.status(404).json({ message: 'Cannot find specialty' });
+            if (provider == null) {
+                return res.status(404).json({ message: 'Cannot find provider' });
             } else {
-                Specialty.remove();
-                res.json({ message: "Deleted Specialty" });
+                provider.remove();
+                res.json({ message: "Deleted provider" });
             }
         } catch (err) {
             return res.status(500).json({ message: err.message });
