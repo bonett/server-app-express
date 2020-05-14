@@ -27,3 +27,12 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/specialities/5ebc9f81ead90c2e47ba76d4
+
+
+
+###
+GET http://localhost:3000/providers
+
+###
+GET http://localhost:3000/providers/59c19cba5754f2d72b65c687
+
