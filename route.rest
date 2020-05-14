@@ -2,7 +2,7 @@
 GET http://localhost:3000/specialties
 
 ###
-GET http://localhost:3000/specialties/5ebcd91d2a220f48c6701526
+GET http://localhost:3000/specialties/5ebcf047c8ca3e52ff99ab9c
 
 ###
 POST http://localhost:3000/specialties
@@ -15,11 +15,11 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/specialties/59c19c6e5754f2d72b65c662
+PUT http://localhost:3000/specialties/5ebcf047c8ca3e52ff99ab9c
 Content-Type: application/json
 
 {
-    "name": "Medicine asas",
+    "name": "Medicine",
     "createdBy": 79027,
     "updatedBy": 49305
 }
@@ -32,23 +32,23 @@ DELETE http://localhost:3000/specialties/5ebcda86b74d8a49e494a963
 GET http://localhost:3000/providers
 
 ###
-GET http://localhost:3000/providers/5ebcda8bb74d8a49e494a964
+GET http://localhost:3000/providers/5ebcf759056717554903f5bf
 
 ###
 POST http://localhost:3000/providers
 Content-Type: application/json
 
 {
-    "status": "AWATING_CREDENTIALS",
+    "status": "ACTIVE",
     "firstName": "Wilfrido",
     "lastName": "Bonett",
     "middleName": "w",
-    "email": "wil@gmail.com",
+    "email": "sss@gmail.com",
     "specialty": "5ebcda8bb74d8a49e494a964",
     "projectedStartDate": "2017-06-23",
     "employerId": 318,
     "providerType": "NP",
-    "staffStatus": "COURTESY",
+    "staffStatus": "READY_FOR_REVIEW",
     "assignedTo": null,
     "createdBy": 47648,
     "updatedBy": 43545,
@@ -56,7 +56,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/providers/5ebcda8bb74d8a49e494a964
+PUT http://localhost:3000/providers/59c19cba5754f2d72b65c68e
 Content-Type: application/json
 
 {
@@ -78,6 +78,89 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/providers/59c19cba5754f2d72b65c68f
+
+
+
+###
+GET http://localhost:3000/staff
+
+###
+GET http://localhost:3000/staff/5ebcea75b0ba555000c15c7c
+
+###
+POST http://localhost:3000/staff
+Content-Type: application/json
+
+{
+    "name": "COURTESY"
+}
+
+###
+PUT http://localhost:3000/staff/5ebcea75b0ba555000c15c7c
+Content-Type: application/json
+
+{
+    "name": "UNIDER_FOR_REVIEW2322223",
+}
+
+###
+DELETE http://localhost:3000/staff/5ebcea75b0ba555000c15c7c
+
+
+
+
+###
+GET http://localhost:3000/status
+
+###
+GET http://localhost:3000/status/5ebcee0433d4de51a2b34384
+
+###
+POST http://localhost:3000/status
+Content-Type: application/json
+
+{
+    "name": "AWATING_CREDENTIALS"
+}
+
+###
+PUT http://localhost:3000/status/5ebcee2143d4d851c1486b92
+Content-Type: application/json
+
+{
+    "name": "UNIDER_FOR_REVIEW2322223",
+}
+
+###
+DELETE http://localhost:3000/status/5ebcee0433d4de51a2b34384
+
+
+
+
+###
+GET http://localhost:3000/types
+
+###
+GET http://localhost:3000/types/5ebd5e0d5df91b5b405976c4
+
+###
+POST http://localhost:3000/types
+Content-Type: application/json
+
+{
+    "name": "NP"
+}
+
+###
+PUT http://localhost:3000/types/5ebd5e0d5df91b5b405976c4
+Content-Type: application/json
+
+{
+    "name": "NP",
+}
+
+###
+DELETE http://localhost:3000/types/5ebd5f00d043325c0509c4fd
 
 
 

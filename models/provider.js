@@ -50,6 +50,9 @@ const providerSchema = new mongoose.Schema({
     },
     photo: {
         type: String
+    },
+    providerStatus: {
+        type: String
     }
 }, {
     timestamps: true
