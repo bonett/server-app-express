@@ -44,8 +44,8 @@ module.exports = {
     updateStaff: async (req, res, next) => {
 
         const { staffId } = req.params;
-        const newStaff = new Staff(req.body);
-        const result = await Staff.findByIdAndUpdate(staffId, newStaff);
+        const newStaff = req.body;
+        await Staff.findByIdAndUpdate(staffId, newStaff);
 
         try {
             res.json(newStaff);

@@ -44,8 +44,8 @@ module.exports = {
     updateSpecialty: async (req, res, next) => {
 
         const { specialtyId } = req.params;
-        const newSpecialty = new Specialty(req.body);
-        const result = await Specialty.findByIdAndUpdate(specialtyId, newSpecialty);
+        const newSpecialty = req.body;
+        await Specialty.findByIdAndUpdate(specialtyId, newSpecialty);
 
         try {
             res.json(newSpecialty);

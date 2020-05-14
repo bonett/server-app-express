@@ -44,8 +44,8 @@ module.exports = {
     updateStatus: async (req, res, next) => {
 
         const { statusId } = req.params;
-        const newStatus = new Status(req.body);
-        const result = await Status.findByIdAndUpdate(statusId, newStatus);
+        const newStatus = req.body;
+        await Status.findByIdAndUpdate(statusId, newStatus);
 
         try {
             res.json(newStaff);

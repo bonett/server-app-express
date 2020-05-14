@@ -44,8 +44,8 @@ module.exports = {
     updateType: async (req, res, next) => {
 
         const { typeId } = req.params;
-        const newType = new Type(req.body);
-        const result = await Type.findByIdAndUpdate(typeId, newType);
+        const newType = req.body;
+        await Type.findByIdAndUpdate(typeId, newType);
 
         try {
             res.json(newType);
