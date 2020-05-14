@@ -10,7 +10,7 @@
 
 First, you should clone repositoy:
 
-`git clone https://github.com/bonett/server-app-express.git` then, cd `server-express-app` 
+`git clone https://github.com/bonett/server-app-express.git` then, `cd server-express-app` 
 
 don't forget to install the dependencies `npm install`
 

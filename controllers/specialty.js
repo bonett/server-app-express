@@ -27,6 +27,7 @@ module.exports = {
 
     showSpecialty: async (req, res, next) => {
 
+        console.log(req.params);
         const { specialtyId } = req.params;
         const specialty = await Specialty.findById(specialtyId);
 
