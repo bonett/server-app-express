@@ -20,7 +20,7 @@ const providerSchema = new mongoose.Schema({
         unique: true
     },
     speciality: {
-        type: Schema.Types.ObjectId,
+        type: Schema.ObjectId,
         ref: "Speciality"
     },
     employerId: {

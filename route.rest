@@ -3,7 +3,7 @@ GET http://localhost:3000/specialities
 
 
 ###
-GET http://localhost:3000/specialities/5ebc9f8bead90c2e47ba76d5
+GET http://localhost:3000/specialities/5ebc9ff86ea8d12e93b73248
 
 
 ###
@@ -21,7 +21,7 @@ PATCH http://localhost:3000/specialities/5ebc9ff86ea8d12e93b73248
 Content-Type: application/json
 
 {
-    "name": "Medicine 1",
+    "name": "Medicine 1828282",
     "createdBy": 79027,
     "updatedBy": 49305
 }
@@ -35,19 +35,19 @@ DELETE http://localhost:3000/specialities/5ebc9f81ead90c2e47ba76d4
 GET http://localhost:3000/providers
 
 ###
-GET http://localhost:3000/providers/59c19cba5754f2d72b65c687
+GET http://localhost:3000/providers/5ebcc36d56808e3bcdceeaa9
 
 ###
 POST http://localhost:3000/providers
 Content-Type: application/json
 
 {
-    "status": "READY_FOR_REVIEW",
+    "status": "",
     "firstName": "Wilfrido",
     "lastName": "Bonett",
-    "middleName": "Y",
+    "middleName": "w",
     "email": "wil@gmail.com",
-    "specialty": "59c19c6e5754f2d72b65c662",
+    "speciality": "5ebc9ff86ea8d12e93b73248",
     "projectedStartDate": "2017-06-23",
     "employerId": 318,
     "providerType": "NP",
@@ -56,7 +56,29 @@ Content-Type: application/json
     "createdBy": 47648,
     "updatedBy": 43545,
     "photo": null
-  }
+}
+
+
+###
+PATCH http://localhost:3000/providers/5ebcc36d56808e3bcdceeaa9
+Content-Type: application/json
+
+{
+    "status": "READY_FOR_REVIEW",
+    "firstName": "WILFRIDO",
+    "lastName": "ZPAES",
+    "middleName": "Y",
+    "email": "Amely86@gmail.com",
+    "speciality": "59c19c6e5754f2d72b65c662",
+    "projectedStartDate": "2017-06-23T19:22:14.955Z",
+    "employerId": 318,
+    "providerType": "NP",
+    "staffStatus": "COURTESY",
+    "assignedTo": null,
+    "createdBy": 47648,
+    "updatedBy": 43545,
+    "photo": ""
+}
 
 
 ###

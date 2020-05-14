@@ -22,16 +22,16 @@ router.get('/:id', getProvider, (req, res) => {
 // Creating one
 router.post('/', async (req, res) => {
 
-    const speciality = new Speciality({
+    const specialityProvider = new Speciality({
         _id: new mongoose.Types.ObjectId()
-      });
-
+    });
+    
     const provider = new Provider({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         middleName: req.body.middleName,
         email: req.body.email,
-        speciality: speciality,
+        speciality: specialityProvider,
         projectedStartDate: req.body.projectedStartDate,
         employerId: req.body.employerId,
         providerType: req.body.providerType,
@@ -50,6 +50,34 @@ router.post('/', async (req, res) => {
     }
 });
 
+// Updating one
+router.patch('/:id', getProvider, async (req, res) => {
+
+    if (req.body.firstName != null) {
+        res.provider.firstName = req.body.firstName;
+        res.provider.lastName = req.body.lastName;
+        res.provider.middleName = req.body.middleName;
+        res.provider.email = req.body.email;
+        res.provider.speciality = req.body.speciality;
+        res.provider.projectedStartDate = req.body.projectedStartDate;
+        res.provider.employerId = req.body.employerId;
+        res.provider.providerType = req.body.providerType;
+        res.provider.staffStatus = req.body.staffStatus;
+        res.provider.status = req.body.status;
+        res.provider.createdBy = req.body.createdBy;
+        res.provider.updatedBy = req.body.updatedBy;
+        res.provider.photo = req.body.photo;
+    }
+
+    try {
+        const updateProvider = await res.provider.save();
+        res.json(updateProvider);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
+
 // Deleting one
 router.delete('/:id', getProvider, async (req, res) => {
     try {
@@ -59,23 +87,6 @@ router.delete('/:id', getProvider, async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
-
-async function getSpeciality(req, res, next) {
-
-    let speciality;
-
-    try {
-        speciality = await Speciality.findById(req.params.speciality);
-        if (provider == null) {
-            return res.status(404).json({ message: 'Cannot find speciality' });
-        }
-    } catch (err) {
-        return res.status(500).json({ message: err.message });
-    }
-
-    res.provider = provider;
-    next();
-};
 
 async function getProvider(req, res, next) {
 
