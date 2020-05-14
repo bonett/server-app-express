@@ -30,14 +30,16 @@ const providerSchema = new mongoose.Schema({
         type: Date,
     },
     providerType: {
-        type: String 
+        type: Schema.ObjectId,
+        ref: "Type"
     },
     staffStatus: {
-        type: String,
+        type: Schema.ObjectId,
+        ref: "Staff"
     },
     status: {
-        type: String,
-        default: 'AWATING_CREDENTIALS'
+        type: Schema.ObjectId,
+        ref: "Status"
     },
     assignedTo: {
         type: String

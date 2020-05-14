@@ -81,3 +81,87 @@ DELETE http://localhost:3000/providers/59c19cba5754f2d72b65c68f
 
 
 
+###
+GET http://localhost:3000/staff
+
+###
+GET http://localhost:3000/staff/5ebcea75b0ba555000c15c7c
+
+###
+POST http://localhost:3000/staff
+Content-Type: application/json
+
+{
+    "name": "UNIDER_FOR_REVIEW2"
+}
+
+###
+PUT http://localhost:3000/staff/5ebcea75b0ba555000c15c7c
+Content-Type: application/json
+
+{
+    "name": "UNIDER_FOR_REVIEW2322223",
+}
+
+###
+DELETE http://localhost:3000/staff/5ebceaa9b0ba555000c15c7f
+
+
+
+
+###
+GET http://localhost:3000/status
+
+###
+GET http://localhost:3000/status/5ebcee0433d4de51a2b34384
+
+###
+POST http://localhost:3000/status
+Content-Type: application/json
+
+{
+    "name": "ACTIVE"
+}
+
+###
+PUT http://localhost:3000/status/5ebcee2143d4d851c1486b92
+Content-Type: application/json
+
+{
+    "name": "UNIDER_FOR_REVIEW2322223",
+}
+
+###
+DELETE http://localhost:3000/status/5ebcee0433d4de51a2b34384
+
+
+
+
+
+###
+GET http://localhost:3000/types
+
+###
+GET http://localhost:3000/types/5ebcee6c112c6d520693bd24
+
+###
+POST http://localhost:3000/types
+Content-Type: application/json
+
+{
+    "name": "ACTIVE"
+}
+
+###
+PUT http://localhost:3000/types/5ebcee6c112c6d520693bd24
+Content-Type: application/json
+
+{
+    "name": "UNIDER_FOR_REVIEW2322223",
+}
+
+###
+DELETE http://localhost:3000/types/5ebcee6c112c6d520693bd24
+
+
+

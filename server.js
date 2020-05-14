@@ -16,9 +16,15 @@ app.use(express.json());
 
 const specialtiesRouter = require('./routes/specialties');
 const providersRouter = require('./routes/providers');
+const staffRouter = require('./routes/staff');
+const statusRouter = require('./routes/status');
+const typesRouter = require('./routes/types');
 
 app.use('/specialties', specialtiesRouter);
 app.use('/providers', providersRouter);
+app.use('/staff', staffRouter);
+app.use('/status', statusRouter);
+app.use('/types', typesRouter);
 
 
 app.listen(3000, () => console.log('server started on port'));
