@@ -25,12 +25,16 @@ module.exports = {
     showProvider: async (req, res, next) => {
 
         const { ProviderId } = req.params;
-        const provider = await Provider.findOne(ProviderId)
+        const provider = await Provider.findById(ProviderId)
 
         try {
-            res.json(provider);
+            if (provider == null) {
+                return res.status(404).json({ message: 'Cannot find provider' });
+            } else {
+                res.json(provider);
+            }
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            return res.status(500).json({ message: err.message });
         }
     },
 

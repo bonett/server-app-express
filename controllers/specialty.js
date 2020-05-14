@@ -24,12 +24,16 @@ module.exports = {
     showSpecialty: async (req, res, next) => {
 
         const { specialtyId } = req.params;
-        const specialty = await Specialty.findOne(specialtyId)
+        const specialty = await Specialty.findById(specialtyId)
 
         try {
-            res.json(specialty);
+            if (specialty == null) {
+                return res.status(404).json({ message: 'Cannot find specialty' });
+            } else {
+                res.json(specialty);
+            }
         } catch (err) {
-            res.status(400).json({ message: err.message });
+            return res.status(500).json({ message: err.message });
         }
     },
 
