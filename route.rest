@@ -19,7 +19,7 @@ PUT http://localhost:3000/specialties/5ebcf047c8ca3e52ff99ab9c
 Content-Type: application/json
 
 {
-    "name": "Medicine asas",
+    "name": "Medicine",
     "createdBy": 79027,
     "updatedBy": 49305
 }
@@ -141,7 +141,7 @@ DELETE http://localhost:3000/status/5ebcee0433d4de51a2b34384
 GET http://localhost:3000/types
 
 ###
-GET http://localhost:3000/types/5ebcf5b11c1b3a54a7f6a0ee
+GET http://localhost:3000/types/5ebd5e0d5df91b5b405976c4
 
 ###
 POST http://localhost:3000/types
@@ -152,7 +152,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/types/5ebcf5b11c1b3a54a7f6a0ee
+PUT http://localhost:3000/types/5ebd5e0d5df91b5b405976c4
 Content-Type: application/json
 
 {
@@ -160,7 +160,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/types/5ebcf5b11c1b3a54a7f6a0ee
+DELETE http://localhost:3000/types/5ebd5f00d043325c0509c4fd
 
 
 

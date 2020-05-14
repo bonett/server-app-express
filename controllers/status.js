@@ -5,7 +5,7 @@ module.exports = {
     index: async (req, res, next) => {
 
         const result = await Status.find();
-        
+
         try {
             res.json(result);
         } catch (err) {
@@ -44,11 +44,16 @@ module.exports = {
     updateStatus: async (req, res, next) => {
 
         const { statusId } = req.params;
+        const status = await Status.findById(statusId);
         const newStatus = req.body;
-        await Status.findByIdAndUpdate(statusId, newStatus);
 
         try {
-            res.json(newStaff);
+            if (status == null) {
+                res.status(400).json({ message: err.message });
+            } else {
+                await Status.findByIdAndUpdate(statusId, newStatus);
+                res.json(newStaff);
+            }
         } catch (err) {
             res.status(400).json({ message: err.message });
         }

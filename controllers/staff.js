@@ -5,7 +5,7 @@ module.exports = {
     index: async (req, res, next) => {
 
         const result = await Staff.find();
-        
+
         try {
             res.json(result);
         } catch (err) {
@@ -44,11 +44,16 @@ module.exports = {
     updateStaff: async (req, res, next) => {
 
         const { staffId } = req.params;
+        const staff = await Staff.findById(staffId);
         const newStaff = req.body;
-        await Staff.findByIdAndUpdate(staffId, newStaff);
 
         try {
-            res.json(newStaff);
+            if (staff == null) {
+                res.status(400).json({ message: err.message });
+            } else {
+                await Staff.findByIdAndUpdate(staffId, newStaff);
+                res.json(newStaff);
+            }
         } catch (err) {
             res.status(400).json({ message: err.message });
         }

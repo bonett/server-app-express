@@ -44,11 +44,16 @@ module.exports = {
     updateType: async (req, res, next) => {
 
         const { typeId } = req.params;
+        const type = await Type.findById(typeId);
         const newType = req.body;
-        await Type.findByIdAndUpdate(typeId, newType);
 
         try {
-            res.json(newType);
+            if (type == null) {
+                res.status(400).json({ message: err.message });
+            } else {
+                await Type.findByIdAndUpdate(typeId, newType);
+                res.json(newType);
+            }
         } catch (err) {
             res.status(400).json({ message: err.message });
         }
