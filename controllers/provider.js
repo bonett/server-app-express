@@ -1,5 +1,8 @@
 const Provider = require('../models/provider');
 const Specialty = require('../models/specialty');
+const Status = require('../models/status');
+const Staff = require('../models/staff');
+const Types = require('../models/type');
 
 module.exports = {
 
@@ -18,6 +21,9 @@ module.exports = {
 
         const params = req.body;
         const specialtyId = params.specialty;
+        const provider = await Types.findOne({ name: params.providerType });
+        const status = await Status.findOne({ name: params.status });
+        const staff = await Staff.findOne({ name: params.staffStatus });
         const getSpecialty = await Specialty.findById(specialtyId);
 
         const newProvider = new Provider({
@@ -36,12 +42,17 @@ module.exports = {
             photo: req.body.photo
         });
 
-        await newProvider.save();
 
-        try {
-            res.status(201).json(newProvider);
-        } catch (err) {
-            res.status(400).json({ message: err.message });
+        if (provider.name == null || staff.name == null || status.name == null) {
+            res.status(400).json({ message: 'Bad request, payload error' });
+        } else {
+            await newProvider.save();
+
+            try {
+                res.status(201).json(newProvider);
+            } catch (err) {
+                res.status(400).json({ message: err.message });
+            }
         }
     },
 
@@ -83,12 +94,20 @@ module.exports = {
 
         const { providerId } = req.params;
         const newProvider = new Provider(req.body);
-        await Provider.findByIdAndUpdate(providerId, newProvider);
+        const provider = await Types.findOne({ name: newProvider.providerType });
+        const status = await Status.findOne({ name: newProvider.status });
+        const staff = await Types.findOne({ name: newProvider.staffStatus });
 
-        try {
-            res.json(newProvider);
-        } catch (err) {
-            res.status(400).json({ message: err.message });
+        if (provider == null || staff == null || status == null) {
+            res.status(400).json({ message: 'Invalid data' });
+        } else {
+            await Provider.findByIdAndUpdate(providerId, newProvider);
+
+            try {
+                res.json(newProvider);
+            } catch (err) {
+                res.status(400).json({ message: err.message });
+            }
         }
     },
 

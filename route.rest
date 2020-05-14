@@ -39,16 +39,16 @@ POST http://localhost:3000/providers
 Content-Type: application/json
 
 {
-    "status": "AWATING_CREDENTIALS",
+    "status": "ACTIVE",
     "firstName": "Wilfrido",
     "lastName": "Bonett",
     "middleName": "w",
-    "email": "wil@gmail.com",
+    "email": "sss@gmail.com",
     "specialty": "5ebcda8bb74d8a49e494a964",
     "projectedStartDate": "2017-06-23",
     "employerId": 318,
     "providerType": "NP",
-    "staffStatus": "COURTESY",
+    "staffStatus": "READY_FOR_REVIEW",
     "assignedTo": null,
     "createdBy": 47648,
     "updatedBy": 43545,
@@ -92,7 +92,7 @@ POST http://localhost:3000/staff
 Content-Type: application/json
 
 {
-    "name": "UNIDER_FOR_REVIEW2"
+    "name": "READY_FOR_REVIEW"
 }
 
 ###
@@ -149,7 +149,7 @@ POST http://localhost:3000/types
 Content-Type: application/json
 
 {
-    "name": "ACTIVE"
+    "name": "NP"
 }
 
 ###
