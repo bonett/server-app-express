@@ -1,29 +1,83 @@
-GET http://localhost:3000/specialities
-
+###
+GET http://localhost:3000/specialties
 
 ###
-
-GET http://localhost:3000/specialities/5ebc9f8bead90c2e47ba76d5
-
+GET http://localhost:3000/specialties/5ebcd91d2a220f48c6701526
 
 ###
-
-POST http://localhost:3000/specialities
+POST http://localhost:3000/specialties
 Content-Type: application/json
 
 {
-    "name": "Happy"
+    "name": "xxxxxx Newasdsad",
+    "createdBy": 79027,
+    "updatedBy": 49305
 }
 
 ###
-
-PATCH http://localhost:3000/specialities/5ebc9f8bead90c2e47ba76d5
+PUT http://localhost:3000/specialties/59c19c6e5754f2d72b65c662
 Content-Type: application/json
 
 {
-    "name": "New Name"
+    "name": "Medicine as",
+    "createdBy": 79027,
+    "updatedBy": 49305
 }
+
+###
+DELETE http://localhost:3000/specialties/5ebcda86b74d8a49e494a963
 
 
 ###
-DELETE http://localhost:3000/specialities/5ebc9f81ead90c2e47ba76d4
+GET http://localhost:3000/providers
+
+###
+GET http://localhost:3000/providers/59c19cba5754f2d72b65c68f
+
+###
+POST http://localhost:3000/providers
+Content-Type: application/json
+
+{
+    "status": "AWATING_CREDENTIALS",
+    "firstName": "Wilfrido",
+    "lastName": "Bonett",
+    "middleName": "w",
+    "email": "wil@gmail.com",
+    "speciality": "5ebc9ff86ea8d12e93b73248",
+    "projectedStartDate": "2017-06-23",
+    "employerId": 318,
+    "providerType": "NP",
+    "staffStatus": "COURTESY",
+    "assignedTo": null,
+    "createdBy": 47648,
+    "updatedBy": 43545,
+    "photo": null
+}
+
+###
+PUT http://localhost:3000/providers/5ebcc36d56808e3bcdceeaa9
+Content-Type: application/json
+
+{
+    "status": "READY_FOR_REVIEW",
+    "firstName": "WILFRIDO",
+    "lastName": "ZPAES",
+    "middleName": "Y",
+    "email": "Amely86@gmail.com",
+    "speciality": "59c19c6e5754f2d72b65c662",
+    "projectedStartDate": "2017-06-23T19:22:14.955Z",
+    "employerId": 318,
+    "providerType": "NP",
+    "staffStatus": "COURTESY",
+    "assignedTo": null,
+    "createdBy": 47648,
+    "updatedBy": 43545,
+    "photo": ""
+}
+
+###
+DELETE http://localhost:3000/providers/59c19cba5754f2d72b65c68f
+
+
+
