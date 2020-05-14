@@ -1,0 +1,29 @@
+GET http://localhost:3000/specialities
+
+
+###
+
+GET http://localhost:3000/specialities/5ebc9f8bead90c2e47ba76d5
+
+
+###
+
+POST http://localhost:3000/specialities
+Content-Type: application/json
+
+{
+    "name": "Happy"
+}
+
+###
+
+PATCH http://localhost:3000/specialities/5ebc9f8bead90c2e47ba76d5
+Content-Type: application/json
+
+{
+    "name": "New Name"
+}
+
+
+###
+DELETE http://localhost:3000/specialities/5ebc9f81ead90c2e47ba76d4

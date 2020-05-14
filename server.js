@@ -9,4 +9,10 @@ const db = mongoose.connection
 db.on('error', () => console.log(error))
 db.once('open', () => console.log('Connected to Database'))
 
-app.listen(8000, () => console.log('server started on port'))
+app.use(express.json())
+
+const specialitiesRouter = require('./routes/specialities')
+app.use('/specialities', specialitiesRouter)
+
+
+app.listen(3000, () => console.log('server started on port'))
