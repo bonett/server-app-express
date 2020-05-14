@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 const Provider = require('../models/provider');
-const Speciality = require('../models/speciality');
+const Specialty = require('../models/specialty');
 
 // Gettting all
 router.get('/', async (req, res) => {
@@ -22,7 +22,7 @@ router.get('/:id', getProvider, (req, res) => {
 // Creating one
 router.post('/', async (req, res) => {
 
-    const specialityProvider = new Speciality({
+    const specialtyProvider = new Specialty({
         _id: new mongoose.Types.ObjectId()
     });
     
@@ -31,12 +31,12 @@ router.post('/', async (req, res) => {
         lastName: req.body.lastName,
         middleName: req.body.middleName,
         email: req.body.email,
-        speciality: specialityProvider,
+        specialty: specialtyProvider,
         projectedStartDate: req.body.projectedStartDate,
         employerId: req.body.employerId,
         providerType: req.body.providerType,
         staffStatus: req.body.staffStatus,
-        status: "READY_FOR_REVIEW",
+        status: req.body.status,
         createdBy: req.body.createdBy,
         updatedBy: req.body.updatedBy,
         photo: req.body.photo
@@ -58,7 +58,7 @@ router.patch('/:id', getProvider, async (req, res) => {
         res.provider.lastName = req.body.lastName;
         res.provider.middleName = req.body.middleName;
         res.provider.email = req.body.email;
-        res.provider.speciality = req.body.speciality;
+        res.provider.specialty = req.body.specialty;
         res.provider.projectedStartDate = req.body.projectedStartDate;
         res.provider.employerId = req.body.employerId;
         res.provider.providerType = req.body.providerType;

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const specialitySchema = new mongoose.Schema({
+const specialtySchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -17,4 +17,4 @@ const specialitySchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Speciality', specialitySchema)
+module.exports = mongoose.model('Specialty', specialtySchema)

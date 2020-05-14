@@ -19,9 +19,9 @@ const providerSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    speciality: {
+    specialty: {
         type: Schema.ObjectId,
-        ref: "Speciality"
+        ref: "Specialty"
     },
     employerId: {
         type: Number,

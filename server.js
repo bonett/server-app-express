@@ -14,10 +14,10 @@ db.once('open', () => console.log('Connected to Database'));
 
 app.use(express.json());
 
-const specialitiesRouter = require('./routes/specialities');
+const specialtiesRouter = require('./routes/specialties');
 const providersRouter = require('./routes/providers');
 
-app.use('/specialities', specialitiesRouter);
+app.use('/specialties', specialtiesRouter);
 app.use('/providers', providersRouter);
 
 
