@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;;
-const Speciality = require('../models/speciality');
+const Schema = mongoose.Schema;
 
 const providerSchema = new mongoose.Schema({
     firstName: {
@@ -21,12 +20,11 @@ const providerSchema = new mongoose.Schema({
         unique: true
     },
     speciality: {
-        type: Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Speciality"
     },
     employerId: {
-        type: Schema.ObjectId,
-        ref: "Speciality"
+        type: Number,
     },
     projectedStartDate: {
         type: Date,

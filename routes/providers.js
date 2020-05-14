@@ -1,6 +1,8 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const router = express.Router();
 const Provider = require('../models/provider');
+const Speciality = require('../models/speciality');
 
 // Gettting all
 router.get('/', async (req, res) => {
@@ -19,15 +21,22 @@ router.get('/:id', getProvider, (req, res) => {
 
 // Creating one
 router.post('/', async (req, res) => {
-    const provider = new Providers({
+
+    const speciality = new Speciality({
+        _id: new mongoose.Types.ObjectId()
+      });
+
+    const provider = new Provider({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         middleName: req.body.middleName,
         email: req.body.email,
+        speciality: speciality,
         projectedStartDate: req.body.projectedStartDate,
         employerId: req.body.employerId,
         providerType: req.body.providerType,
         staffStatus: req.body.staffStatus,
+        status: "READY_FOR_REVIEW",
         createdBy: req.body.createdBy,
         updatedBy: req.body.updatedBy,
         photo: req.body.photo
@@ -51,17 +60,34 @@ router.delete('/:id', getProvider, async (req, res) => {
     }
 });
 
+async function getSpeciality(req, res, next) {
+
+    let speciality;
+
+    try {
+        speciality = await Speciality.findById(req.params.speciality);
+        if (provider == null) {
+            return res.status(404).json({ message: 'Cannot find speciality' });
+        }
+    } catch (err) {
+        return res.status(500).json({ message: err.message });
+    }
+
+    res.provider = provider;
+    next();
+};
+
 async function getProvider(req, res, next) {
 
     let provider;
 
     try {
-        provider = await Provider.findById(req.params.id)
+        provider = await Provider.findById(req.params.id);
         if (provider == null) {
-            return res.status(404).json({ message: 'Cannot find provider' })
+            return res.status(404).json({ message: 'Cannot find provider' });
         }
     } catch (err) {
-        return res.status(500).json({ message: err.message })
+        return res.status(500).json({ message: err.message });
     }
 
     res.provider = provider;
