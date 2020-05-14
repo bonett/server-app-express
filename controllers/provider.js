@@ -81,12 +81,12 @@ module.exports = {
 
     updateProvider: async (req, res, next) => {
 
-        const { specialtyId } = req.params.id;
-        const newSpecialty = new Specialty(req.body);
-        const result = await Specialty.findByIdAndUpdate(specialtyId, newSpecialty);
+        const { providerId } = req.params;
+        const newProvider = new Provider(req.body);
+        await Provider.findByIdAndUpdate(providerId, newProvider);
 
         try {
-            res.json(newSpecialty);
+            res.json(newProvider);
         } catch (err) {
             res.status(400).json({ message: err.message });
         }

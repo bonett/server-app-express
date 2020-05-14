@@ -19,7 +19,7 @@ PUT http://localhost:3000/specialties/59c19c6e5754f2d72b65c662
 Content-Type: application/json
 
 {
-    "name": "Medicine as",
+    "name": "Medicine asas",
     "createdBy": 79027,
     "updatedBy": 49305
 }
@@ -32,7 +32,7 @@ DELETE http://localhost:3000/specialties/5ebcda86b74d8a49e494a963
 GET http://localhost:3000/providers
 
 ###
-GET http://localhost:3000/providers/5ebcdd7c08fd074b49ab44be
+GET http://localhost:3000/providers/5ebcda8bb74d8a49e494a964
 
 ###
 POST http://localhost:3000/providers
@@ -56,24 +56,24 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/providers/5ebcc36d56808e3bcdceeaa9
+PUT http://localhost:3000/providers/5ebcda8bb74d8a49e494a964
 Content-Type: application/json
 
 {
-    "status": "READY_FOR_REVIEW",
-    "firstName": "WILFRIDO",
-    "lastName": "ZPAES",
-    "middleName": "Y",
-    "email": "Amely86@gmail.com",
-    "speciality": "59c19c6e5754f2d72b65c662",
-    "projectedStartDate": "2017-06-23T19:22:14.955Z",
+    "status": "AWATING_CREDENTIALS",
+    "firstName": "ANDRES",
+    "lastName": "Bonett",
+    "middleName": "w",
+    "email": "wil@gmail.com",
+    "specialty": "5ebcda8bb74d8a49e494a964",
+    "projectedStartDate": "2017-06-23",
     "employerId": 318,
     "providerType": "NP",
     "staffStatus": "COURTESY",
     "assignedTo": null,
     "createdBy": 47648,
     "updatedBy": 43545,
-    "photo": ""
+    "photo": null
 }
 
 ###
