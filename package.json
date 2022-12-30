@@ -13,7 +13,7 @@
   "dependencies": {
     "chai": "^4.2.0",
     "express": "^4.17.1",
-    "mocha": "^7.1.2",
+    "mocha": "^10.2.0",
     "mongoose": "^5.9.13",
     "supertest": "^4.0.2"
   },
